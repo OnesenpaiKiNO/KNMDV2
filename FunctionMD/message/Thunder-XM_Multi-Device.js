@@ -191,7 +191,9 @@ getContentType, downloadContentFromMessage } = require('@adiwajshing/baileys');
     MenuList += `${LETT++}. ${prefix}sel _barang_ _jumlah_\n`
     MenuList += `${LETT++}. ${prefix}buy _barang_ _jumlah_\n`
     MenuList += `${LETT++}. ${prefix}beli _barang_ _jumlah_\n\n`
-      
+    MenuList += `_🎧sound_\n`
+    MenuList += `${LETT++}. ${prefix}sound1\n`
+    MenuList += `${LETT++}. ${prefix}jgoblin\n\n`
    //Participant Mention
    const mentionByTag = m.xtype == "extendedTextMessage" && m.message.extendedTextMessage.contextInfo != null ? m.message.extendedTextMessage.contextInfo.mentionedJid : []
    const mentionByreply = m.xtype == "extendedTextMessage" && m.message.extendedTextMessage.contextInfo != null ? m.message.extendedTextMessage.contextInfo.participant || "" : ""
@@ -790,22 +792,22 @@ case 'mining': case 'menambang':{
      {
      index: 2, 
       quickReplyButton: {
-       displayText: 'Click', 
-       id: '#tes'
+       displayText: 'Runtime', 
+       id: '#runtime'
       } 
     },
     { 
      index: 3, 
       quickReplyButton: {
-       displayText: 'Click2', 
-       id: '#tes'
+       displayText: 'Owner', 
+       id: '#owner'
         } 
      },
      {
      index: 4, 
       quickReplyButton: {
-       displayText: 'Click', 
-       id: '#tes'
+       displayText: 'TQTO', 
+       id: '#tqTo'
         } 
       },]
       m.templateButon5IMG(from, MenuList, Options.info.botName, thumb, button, m)
@@ -822,22 +824,22 @@ case 'mining': case 'menambang':{
      {
      index: 2, 
       quickReplyButton: {
-       displayText: 'Click', 
-       id: '#tes'
+       displayText: 'Runtime', 
+       id: '#runtime'
       } 
     },
     { 
      index: 3, 
       quickReplyButton: {
-       displayText: 'Click2', 
-       id: '#tes'
+       displayText: 'Owner', 
+       id: '#owner'
         } 
      },
      {
      index: 4, 
       quickReplyButton: {
-       displayText: 'Click', 
-       id: '#tes'
+       displayText: 'TQTO', 
+       id: '#tqto'
         } 
       }]
     await m.sendButton(
@@ -882,20 +884,20 @@ case 'mining': case 'menambang':{
      {
      index: 3, 
       quickReplyButton: {
-       displayText: 'Click', 
-       id: '#tes'
+       displayText: 'Runtime', 
+       id: '#runtime'
        } },
     { 
      index: 4, 
       quickReplyButton: {
-       displayText: 'Click2', 
-       id: '#tes'
+       displayText: 'Owner', 
+       id: '#owner'
        } },
      {
      index: 5, 
       quickReplyButton: {
-       displayText: 'Click', 
-       id: '#tes'
+       displayText: 'TQTO', 
+       id: '#tqto'
        } },
      ],
     }
@@ -1260,7 +1262,23 @@ case 'mining': case 'menambang':{
    )
   }
   break
-  case 'waifu': case 'megumin':
+case 'jgoblin':{
+   sock.sendMessage(
+   from, 
+   { 
+    audio: {
+     url : `https://g.top4top.io/m_2288jgeeh0.mp3`
+    }, 
+    mimetype: 'audio/mp4', 
+    ptt: true
+    }, 
+    {
+    quoted: m
+   }
+   )
+  }
+  break
+ case 'waifu': case 'megumin':
 case 'shinobu':
 case 'awoo': case 'neko':{
   if (!isInventoryLimit){ addInventoriLimit(m.sender) }
